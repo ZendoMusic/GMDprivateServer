@@ -4,7 +4,7 @@ class zemu {
 
     private function getSongInfoFromAPI($songID) {
         require __DIR__ . "/../../config/zemu.php";
-        $apiUrl = "https://zendomusic.ru/API/get-info/song.php?id=" . $songID . "&pass=" . $apikey;
+        $apiUrl = "https://api.zendomusic.ru/get-info/song.php?id=" . $songID . "&originalurl=true";
         
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $apiUrl);
@@ -113,5 +113,6 @@ class zemu {
         return $info;
     }
 }
+
 
 ?>
